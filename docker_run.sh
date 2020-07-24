@@ -1,7 +1,10 @@
 #!/bin/sh
 
+KITTI_DATASET=/media/ken/EC-PHU3/dataset/kitti/object
 
-docker run --gpus all -it --rm -v `pwd`:/workspace/OpenPCDet \
+docker run --gpus all -it --rm \
+           -v `pwd`:/workspace/OpenPCDet \
+           -v ${KITTI_DATASET}:/dataset/kitti \
            pv-rcnn:test 
 
 # display settings in container
