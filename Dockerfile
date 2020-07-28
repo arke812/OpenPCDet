@@ -21,9 +21,9 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 # ENV SPCONV_FORCE_BUILD_CUDA=1
 RUN pip3 install cmake && \
     apt-get install -y libboost-all-dev
-RUN git clone https://github.com/traveller59/spconv.git --recursive && \
+RUN git clone https://github.com/arke812/spconv.git --recursive && \
     cd spconv && \
-    # git checkout 8da6f96 && \
+    git checkout openpcdet_torch1.5 && \
     git submodule update --init --recursive && \
     python3 setup.py bdist_wheel && \
     cd dist && \
