@@ -80,7 +80,6 @@ int boxes_iou_bev_gpu(at::Tensor boxes_a, at::Tensor boxes_b, at::Tensor ans_iou
 int nms_gpu(at::Tensor boxes, at::Tensor keep, float nms_overlap_thresh){
     // params boxes: (N, 7) [x, y, z, dx, dy, dz, heading]
     // params keep: (N)
-
     CHECK_INPUT(boxes);
     CHECK_CONTIGUOUS(keep);
 
