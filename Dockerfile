@@ -12,7 +12,7 @@ RUN apt-get update && \
     pip3 install -r requirements.txt
 
 # pytorch
-RUN pip3 install torch===1.5.1 torchvision===0.6.1 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip3 install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python3 get-pip.py --force-reinstall
@@ -31,6 +31,12 @@ RUN git clone https://github.com/arke812/spconv.git --recursive && \
 
 
 
+# torch2trt
+RUN git clone https://github.com/arke812/torch2trt && \
+    cd torch2trt && \
+    # python3 setup.py install
+    python3 setup.py build develop
+# or python setup.py install --plugins
 
 
 
